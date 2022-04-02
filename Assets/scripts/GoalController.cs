@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GoalController : MonoBehaviour
 {
+   public bool trump_hair  = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +22,11 @@ public class GoalController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            print("goal");
+           trump_hair = true;
         }
+    }
+    void GameOver()
+    {
+
     }
 }

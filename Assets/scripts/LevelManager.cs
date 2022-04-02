@@ -30,7 +30,16 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       GoalController bolsonaro =  goal.GetComponent<GoalController>();
+       playerMoverment_script dilma = player.GetComponent<playerMoverment_script>();
+       if (bolsonaro.trump_hair == true){
+           print(bolsonaro.trump_hair);
+           dilma.enabled =false;
+
         
+       }
+       
+
     }
     
     void positionGoalAndPlayers()
@@ -72,4 +81,8 @@ public class LevelManager : MonoBehaviour
             mascotCam.SetActive(true);
         }
     }
+
+
+
+
 }
