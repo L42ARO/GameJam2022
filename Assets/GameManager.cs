@@ -4,10 +4,25 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+    // public static event  Action<GameState> OnGameStateChanged; 
+    void Awake()
+    {
+        
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {
-       //yo ma g - Chirag - I AM BACK IN CAPS
+    //    updateGameState(GameState.MainMenu);
     }
 
     // Update is called once per frame
@@ -15,4 +30,29 @@ public class GameManager : MonoBehaviour
     {
         
     }
+    // public void updateGameState(GameState newState)
+    // {
+    //     State = newState;
+    //     switch(newState){
+    //         case GameState.MainMenu:
+    //             break;
+    //         case GameState.Game:
+    //             break;
+    //         case GameState.Pause:
+    //             break;
+    //         case GameState.GameOver:
+    //             break;
+    //         default:
+    //             throw new ArgumentOutOfRangeException(nameof(gameState),newState,null);
+    //     }
+    //     OnGameStateChanged?.invoke(newState);
+    // }
+}
+
+public enum GameState
+{
+    Menu,
+    Playing,
+    Paused,
+    GameOver
 }
