@@ -10,7 +10,7 @@ public class playerMoverment_script : MonoBehaviour
     public GameObject MascotCostume;
     public GameObject PlayerCostume;
     // public mascotMode=false;
-    public float speed = 7f;
+    public float speed = 3f;
     public float gravity = -9.81f;
     private PhotonView PV;
     public Transform groundCheck;
