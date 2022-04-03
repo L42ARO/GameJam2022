@@ -29,7 +29,7 @@ public class statsController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(GetComponent<mascot_manager>().gameObject);
+        
     }
     void OnControllerColliderHit(ControllerColliderHit collisionInfo)
    {
