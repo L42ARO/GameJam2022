@@ -25,7 +25,7 @@ public class playerMoverment_script : MonoBehaviour
        if (GameObject.FindGameObjectWithTag("Mascot") == null)
        {
            MascotCostume.SetActive(true);
-        PlayerCostume.SetActive(false);
+           PlayerCostume.SetActive(false);
        }
    }
 
