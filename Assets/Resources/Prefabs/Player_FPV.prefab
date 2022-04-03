@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 6016806810011903091}
-  cam: {fileID: 0}
+  cam: {fileID: 6016806810482881173}
   speed: 12
   gravity: -9.81
   groundCheck: {fileID: 6016806809759903830}
@@ -142,7 +142,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: -8296384320308290844}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
