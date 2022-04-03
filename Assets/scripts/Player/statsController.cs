@@ -33,7 +33,7 @@ public class statsController : MonoBehaviour
     }
     void OnControllerColliderHit(ControllerColliderHit collisionInfo)
    {
-       if(collisionInfo.gameObject.GetComponent<Collider>().name == "Mascit")
+       if(collisionInfo.gameObject.GetComponent<Collider>().name == "Mascot")
        {
            
            print("Collided with Mascot");
