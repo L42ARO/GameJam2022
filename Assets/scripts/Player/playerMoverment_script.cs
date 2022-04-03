@@ -23,7 +23,7 @@ public class playerMoverment_script : MonoBehaviour
    void Start()
    {
        PV = GetComponent<PhotonView>();
-       if (GameObject.Find("Player_FPV")== null)
+       if (GameObject.Find("Player_FPV(Clone)")== null)
        {
            MascotCostume.SetActive(true);
            PlayerCostume.SetActive(false);
