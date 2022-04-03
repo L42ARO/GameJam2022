@@ -4,17 +4,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameSetupController : MonoBehaviourPunCallbacks
-{
-    // Start is called before the first frame update
+public class GameSetupController : MonoBehaviour{
     void Start()
     {
       CreatePlayer();
     }
   private void CreatePlayer()
 {
-	Debug.Log("Creating Player");
-	PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", 
-            "PhotonPlayer"), Vector3.zero, Quaternion.identity);
+	print("Creating Player");
+	PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Mascot"), Vector3.zero, Quaternion.identity);
 }
 }

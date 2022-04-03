@@ -72,3 +72,4 @@ crashlytics-build.properties
 
 #ignore local files for users
 LocalStuff/
+builds/
