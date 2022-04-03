@@ -113,7 +113,7 @@ public class LobbyManager2 : MonoBehaviourPunCallbacks
         
         // PhotonNetwork.CurrentRoom.IsOpen = false;
         // PhotonNetwork.CurrentRoom.IsVisible = false;
-        PhotonNetwork.LoadLevel("Level3_AI");
+        PhotonNetwork.LoadLevel("Level2_AI");
 
     }
     

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject goal;
     Win_Lose_UI win_loss_UI;
     GameObject player;
+    public int playerHealth=100;
     bool setUp=false;
     public bool win=false;
     public bool victory=false;
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
             instance.win=false;
             instance.setUp=false;
             instance.win_loss_UI = GameObject.Find("WinLoseUI").GetComponent<Win_Lose_UI>();
+            instance.damageTimer=0;
 
         }
     }
@@ -47,16 +49,13 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if(instance.gameState>0 && instance.setUp){
-        //     GoalController bolsonaro =  goal.GetComponent<GoalController>();
-        //     if(instance.mascotSet==false){
-        //         playerMoverment_script dilma = player.GetComponent<playerMoverment_script>();
-        //         if (bolsonaro.trump_hair == true){
-        //             print(bolsonaro.trump_hair+" YOU WIN!");
-        //             dilma.enabled =false;
-        //     }
+            if(instance.damageTimer!=0){
+            instance.damageTimer+=Time.deltaTime;
+                if(instance.damageTimer>=1){
+                    instance.damageTimer=0;
+                }
 
-        
-        //     }
+            }
         }
         
     }
@@ -76,5 +75,14 @@ public class GameManager : MonoBehaviour
         }else{
             instance.victory=true;
         }
+    }
+    float damageTimer=0;
+    public void lowerLife(){
+        if(instance.damageTimer==0){
+            instance.playerHealth-=2;
+            print(playerHealth);
+            instance.damageTimer+=Time.deltaTime;
+        }
+        
     }
 }

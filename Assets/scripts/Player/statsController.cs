@@ -6,7 +6,7 @@ public class statsController : MonoBehaviour
 {   public int health = 5;
     public int life = 0;
     public bool gameNotOver = true;
-
+    GameManager gameManager;
 
     public void game(){
         
@@ -23,7 +23,7 @@ public class statsController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager=GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -37,8 +37,7 @@ public class statsController : MonoBehaviour
        {
            
            print("Collided with Mascot");
-            game();
-           //FindObjectOfType<GameManager>().EndGame();
+           gameManager.lowerLife();
 
        }
 
