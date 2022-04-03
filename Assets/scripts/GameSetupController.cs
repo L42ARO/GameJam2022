@@ -13,15 +13,15 @@ public class GameSetupController : MonoBehaviour{
 {
 	print("Creating Player");
   GameObject[] mascots= GameObject.FindGameObjectsWithTag("Enemy");
-  if(mascots == null || mascots.Length == 0)
+  if(mascots != null || mascots.Length > 0)
   {
-    
-    print("Mascot not found");
-	  PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Mascot"), new Vector3 (5,5,5), Quaternion.identity);
-  }
-  else{
     print("Mascot found");
     PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Player_FPV"), new Vector3 (5,5,5), Quaternion.identity);
+    
+  }
+  else{
+    print("Mascot not found");
+	  PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Mascot"), new Vector3 (5,5,5), Quaternion.identity);
   }
 }
 }
