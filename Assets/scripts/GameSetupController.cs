@@ -12,9 +12,10 @@ public class GameSetupController : MonoBehaviour{
   private void CreatePlayer()
 {
 	print("Creating Player");
-  if(GameObject.Find("Mascot(Clone)") == null)
+  Debug.Break();
+  if(GameObject.FindGameObjectsWithTag("Enemy") == null)
   {
-    Debug.Break();
+    
     print("Mascot not found");
 	  PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Mascot"), new Vector3 (5,5,5), Quaternion.identity);
   }
