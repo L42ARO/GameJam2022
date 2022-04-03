@@ -12,7 +12,8 @@ public class GameSetupController : MonoBehaviour{
   private void CreatePlayer()
 {
 	print("Creating Player");
-  if(GameObject.FindGameObjectsWithTag("Enemy") == null)
+  GameObject[] mascots= GameObject.FindGameObjectsWithTag("Enemy");
+  if(mascots == null || mascots.Length == 0)
   {
     
     print("Mascot not found");
