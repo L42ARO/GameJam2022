@@ -103,7 +103,7 @@ public class LobbyManager2 : MonoBehaviourPunCallbacks
         UpdatePlayerList();
     }
     public void Update(){
-        if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount==1){
+        if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount>=2){
            playButton.SetActive(true); 
         }else{
             playButton.SetActive(false);

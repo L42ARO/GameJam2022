@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if(instance.gameState>0 && instance.setUp){
-            print("runing");
+            // print("runing");
         }
         
     }
@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
         instance.setUp=true;
         instance.mascotSet=c;
         print("Mascot: "+instance.mascotSet);
-        print((GameObject.Find("Goal")!=null) ? "Found" : "Not Found");
+        if (!c) print((GameObject.Find("Mascot")!=null) ? "Found Mascot" : "Mascot Not Found");
+        else print((GameObject.Find("Player_FPV")!=null) ? "Found Player" : "Player Not Found");
     }
 }
