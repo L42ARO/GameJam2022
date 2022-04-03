@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,7 @@ public class playerMoverment_script : MonoBehaviour
     
     public float speed = 12f;
     public float gravity = -9.81f;
-    
+    private PhotonView PV;
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
@@ -16,12 +17,25 @@ public class playerMoverment_script : MonoBehaviour
     bool isGrounded;
 
     // Start is called before the first frame update
-   
+   void Start()
+   {
+       PV = GetComponent<PhotonView>();
+   }
 
     // Update is called once per frame
+
     void Update()
     {   
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance,groundMask);
+        
+    
+if (PV.IsMine)
+	Movement();
+    
+
+    }
+    void Movement()
+    {
+ isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance,groundMask);
 
         if(isGrounded && velocity.y < 0)
         {
@@ -37,6 +51,6 @@ public class playerMoverment_script : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
-
     }
+
 }
