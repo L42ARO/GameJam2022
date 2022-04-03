@@ -103,7 +103,7 @@ public class LobbyManager2 : MonoBehaviourPunCallbacks
         UpdatePlayerList();
     }
     public void Update(){
-        if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount>=2){
+        if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount>=1){
            playButton.SetActive(true); 
         }else{
             playButton.SetActive(false);
@@ -113,7 +113,7 @@ public class LobbyManager2 : MonoBehaviourPunCallbacks
         
         // PhotonNetwork.CurrentRoom.IsOpen = false;
         // PhotonNetwork.CurrentRoom.IsVisible = false;
-        PhotonNetwork.LoadLevel("Level4_AI");
+        PhotonNetwork.LoadLevel("Level2_AI");
 
     }
     

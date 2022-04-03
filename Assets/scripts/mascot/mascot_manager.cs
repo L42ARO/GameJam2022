@@ -4,11 +4,11 @@ using UnityEngine;
 public class mascot_manager : MonoBehaviour
 {   
     public GameObject[] mascot_array = new GameObject[5];
-    
+    GameManager gameManager;
 
     void Awake(){
         System.Random rnd = new System.Random();
-        int Cosplay = rnd.Next(0,4);
+        int Cosplay = rnd.Next(0,5);
 
         if (Cosplay == 0){
             mascot_array[0].SetActive(true);
@@ -26,6 +26,7 @@ public class mascot_manager : MonoBehaviour
             mascot_array[4].SetActive(true);
             mascot_array[4].GetComponent<AudioSource>().enabled=true;
         }
+        gameManager=GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     //public playerMoverment movement;
@@ -33,10 +34,8 @@ public class mascot_manager : MonoBehaviour
    {
        if(collisionInfo.gameObject.GetComponent<Collider>().name == "Player")
        {
-           
-           collisionInfo.gameObject.GetComponent<statsController>().game();
-           //FindObjectOfType<GameManager>().EndGame();
-
+            print("Collided with player");   
+           gameManager.lowerLife();
        }
 
        

@@ -5,12 +5,12 @@ using UnityEngine;
 public class GoalController : MonoBehaviour
 {
    public bool trump_hair  = false;
-
+    GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager=GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -22,11 +22,9 @@ public class GoalController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            print("collided with player");
            trump_hair = true;
+              gameManager.LevelWon();
         }
-    }
-    void GameOver()
-    {
-
     }
 }
