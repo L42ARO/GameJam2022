@@ -12,7 +12,6 @@ public class GameSetupController : MonoBehaviour{
   private void CreatePlayer()
 {
 	print("Creating Player");
-  Debug.Break();
   if(GameObject.FindGameObjectsWithTag("Enemy") == null)
   {
     
