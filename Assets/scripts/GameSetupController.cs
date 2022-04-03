@@ -13,8 +13,12 @@ public class GameSetupController : MonoBehaviour{
 {
 	print("Creating Player");
   if(GameObject.Find("Mascot") == null)
-	  PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Mascot"), new Vector3 (5,5,5), Quaternion.identity);
-  else
-    PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Player_FPV"), new Vector3 (5,5,5), Quaternion.identity);
+  {
+    print("Mascot not found");
+  }
+  else{
+    print("Mascot found");
+  }
+	PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Mascot"), new Vector3 (5,5,5), Quaternion.identity);
 }
 }
