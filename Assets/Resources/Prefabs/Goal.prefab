@@ -104,8 +104,8 @@ GameObject:
   - component: {fileID: 5490427418199704517}
   - component: {fileID: 4618768669048913419}
   - component: {fileID: 6447636409176538662}
-  - component: {fileID: 4074303592127011323}
   - component: {fileID: 5114400351701737586}
+  - component: {fileID: 5990157285587746849}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Untagged
@@ -177,19 +177,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &4074303592127011323
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7634701929617508667}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5114400351701737586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,3 +190,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trump_hair: 0
+--- !u!136 &5990157285587746849
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7634701929617508667}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.3288217
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.19459605, z: 0}

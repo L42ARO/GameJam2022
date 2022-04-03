@@ -15,6 +15,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
     public GameObject exitSpawnPointGroup;
     public GameManager instance;
     public GameObject goal;
+    public GameObject newPlayer;
     void Start()
     {
         PhotonNetwork.SendRate = 40;
@@ -23,7 +24,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         instance=GameObject.Find("GameManager").GetComponent<GameManager>();
         positionGoalAndPlayer();
         // CreatePlayer();
-        instance.setUpReady(mascotSet);
+        instance.setUpReady(mascotSet, newPlayer);
     }
     private void CreatePlayer()
     {
@@ -45,7 +46,19 @@ public class GameSetupController : MonoBehaviourPunCallbacks
             Transform[] exitSpawnPoints=exitSpawnPointGroup.GetComponentsInChildren<Transform>();
             System.Random rnd = new System.Random();
             int spawnpointindex = rnd.Next(1, exitSpawnPoints.Length);
-            goal.transform.position = new Vector3 (exitSpawnPoints[spawnpointindex].position.x, goal.transform.position.y, exitSpawnPoints[spawnpointindex].position.z);
+            goal.transform.position = new Vector3 (exitSpawnPoints[spawnpointindex].position.x, 3, exitSpawnPoints[spawnpointindex].position.z);
+            Transform[] spawnPoints=spawnPointGroup.GetComponentsInChildren<Transform>();
+            float[] distToPlayer=new float[spawnPoints.Length];
+            for (int i = 0; i < spawnPoints.Length; i++)
+            {
+                distToPlayer[i]=Vector3.Distance(spawnPoints[i].position,goal.transform.position);
+            }
+            int maxDistIndex = distToPlayer.ToList().IndexOf(distToPlayer.Max());
+            Vector3 newMascotPos= new Vector3(spawnPoints[maxDistIndex].position.x, 3, spawnPoints[maxDistIndex].position.z);
+            newPlayer=PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Player_FPV"), newMascotPos, Quaternion.identity);
+                mascotSet=true;
+        }
+        else if(!PhotonNetwork.IsMasterClient){
             Transform[] spawnPoints=spawnPointGroup.GetComponentsInChildren<Transform>();
             float[] distToMascot=new float[spawnPoints.Length];
             for (int i = 0; i < spawnPoints.Length; i++)
@@ -54,19 +67,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
             }
             int minDistIndex = distToMascot.ToList().IndexOf(distToMascot.Min());
             Vector3 newMascotPos= new Vector3(spawnPoints[minDistIndex].position.x, 7, spawnPoints[minDistIndex].position.z);
-            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Mascot"), newMascotPos, Quaternion.identity);
-                mascotSet=true;
-        }
-        else if(!PhotonNetwork.IsMasterClient){
-            Transform[] spawnPoints=spawnPointGroup.GetComponentsInChildren<Transform>();
-            float[] distToPlayer=new float[spawnPoints.Length];
-            for (int i = 0; i < spawnPoints.Length; i++)
-            {
-                distToPlayer[i]=Vector3.Distance(spawnPoints[i].position,goal.transform.position);
-            }
-            int minDistIndex = distToPlayer.ToList().IndexOf(distToPlayer.Min());
-            Vector3 newMascotPos= new Vector3(spawnPoints[minDistIndex].position.x, 7, spawnPoints[minDistIndex].position.z);
-            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Player_FPV"), newMascotPos, Quaternion.identity);
+            newPlayer=PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Mascot"), newMascotPos, Quaternion.identity);
                 mascotSet=true;
         }
 
