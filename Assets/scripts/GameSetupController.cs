@@ -22,7 +22,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         PhotonNetwork.AutomaticallySyncScene = true;
         instance=GameObject.Find("GameManager").GetComponent<GameManager>();
         positionGoalAndPlayer();
-        CreatePlayer();
+        // CreatePlayer();
         instance.setUpReady(mascotSet);
     }
     private void CreatePlayer()
@@ -66,7 +66,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
             }
             int minDistIndex = distToPlayer.ToList().IndexOf(distToPlayer.Min());
             Vector3 newMascotPos= new Vector3(spawnPoints[minDistIndex].position.x, 7, spawnPoints[minDistIndex].position.z);
-            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Mascot"), newMascotPos, Quaternion.identity);
+            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Player_FPV"), newMascotPos, Quaternion.identity);
                 mascotSet=true;
         }
 
