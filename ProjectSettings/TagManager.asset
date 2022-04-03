@@ -6,6 +6,8 @@ TagManager:
   tags:
   - UMAIgnore
   - Enemy
+  - Bullet
+  - Mascot
   layers:
   - Default
   - TransparentFX

@@ -41,6 +41,9 @@ public void GameButton()
     else
         Debug.Log("Not connected to server!");
 }
+public void SelectCharacter(string character){
+    print(character);
+}
 public override void OnJoinRandomFailed(short returnCode, string message)
 {
 	Debug.Log("Failed to join a room... creating room");

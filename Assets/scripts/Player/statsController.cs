@@ -29,6 +29,19 @@ public class statsController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        print(GetComponent<mascot_manager>().gameObject);
     }
+    void OnControllerColliderHit(ControllerColliderHit collisionInfo)
+   {
+       if(collisionInfo.gameObject.GetComponent<Collider>().name == "Mascit")
+       {
+           
+           print("Collided with Mascot");
+            game();
+           //FindObjectOfType<GameManager>().EndGame();
+
+       }
+
+       
+   }
 }

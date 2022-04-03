@@ -18,7 +18,6 @@ public class playerMoverment_script : MonoBehaviour
     public LayerMask groundMask;
     Vector3 velocity;
     bool isGrounded;
-    int count = 0;
     // Start is called before the first frame update
    void Start()
    {
@@ -32,14 +31,6 @@ public class playerMoverment_script : MonoBehaviour
         
         if (PV.IsMine){
         Movement();
-            count++;
-            if (count==0){
-                if (GameObject.Find("Player_FPV(Clone)")== null)
-                {
-                    MascotCostume.SetActive(true);
-                    PlayerCostume.SetActive(false);
-                }
-            }
 
         }
         if(!PV.IsMine)
@@ -67,5 +58,6 @@ public class playerMoverment_script : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
+    
 
 }

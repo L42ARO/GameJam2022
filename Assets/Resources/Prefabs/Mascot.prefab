@@ -296,6 +296,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 7151818947559296761}
   cam: {fileID: 7151818947392701647}
+  MascotCostume: {fileID: 0}
+  PlayerCostume: {fileID: 0}
   speed: 12
   gravity: -9.81
   groundCheck: {fileID: 7151818946320582610}

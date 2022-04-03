@@ -5,7 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    // public static event  Action<GameState> OnGameStateChanged; 
+    public bool mascotSet=false;
+    public int gameState;
+    bool setUp=false;
     void Awake()
     {
         
@@ -18,41 +20,27 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-    //    updateGameState(GameState.MainMenu);
-    }
 
-    // Update is called once per frame
-    void Update()
+        instance.gameState = 0;
+        instance.gameState=GameObject.Find("Level_docs").GetComponent<Level_docs>().sceneState;
+        print(instance.gameState);
+    }
+    void Start()
     {
         
     }
-    // public void updateGameState(GameState newState)
-    // {
-    //     State = newState;
-    //     switch(newState){
-    //         case GameState.MainMenu:
-    //             break;
-    //         case GameState.Game:
-    //             break;
-    //         case GameState.Pause:
-    //             break;
-    //         case GameState.GameOver:
-    //             break;
-    //         default:
-    //             throw new ArgumentOutOfRangeException(nameof(gameState),newState,null);
-    //     }
-    //     OnGameStateChanged?.invoke(newState);
-    // }
-}
-
-public enum GameState
-{
-    Menu,
-    Playing,
-    Paused,
-    GameOver
+    
+    void Update()
+    {
+        if(instance.gameState>0 && instance.setUp){
+            print("runing");
+        }
+        
+    }
+    public void setUpReady(bool c){
+        instance.setUp=true;
+        instance.mascotSet=c;
+        print("Mascot: "+instance.mascotSet);
+        print((GameObject.Find("Goal")!=null) ? "Found" : "Not Found");
+    }
 }
