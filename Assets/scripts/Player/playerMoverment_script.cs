@@ -9,6 +9,7 @@ public class playerMoverment_script : MonoBehaviour
     [SerializeField] private Camera cam;
     public GameObject MascotCostume;
     public GameObject PlayerCostume;
+    // public mascotMode=false;
     public float speed = 12f;
     public float gravity = -9.81f;
     private PhotonView PV;
@@ -22,7 +23,7 @@ public class playerMoverment_script : MonoBehaviour
    void Start()
    {
        PV = GetComponent<PhotonView>();
-       if (GameObject.FindGameObjectWithTag("Mascot") == null)
+       if (GameObject.Find("Player_FPV")== null)
        {
            MascotCostume.SetActive(true);
            PlayerCostume.SetActive(false);
