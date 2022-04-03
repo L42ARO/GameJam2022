@@ -18,24 +18,30 @@ public class playerMoverment_script : MonoBehaviour
     public LayerMask groundMask;
     Vector3 velocity;
     bool isGrounded;
-
+    int count = 0;
     // Start is called before the first frame update
    void Start()
    {
        PV = GetComponent<PhotonView>();
-       if (GameObject.Find("Player_FPV(Clone)")== null)
-       {
-           MascotCostume.SetActive(true);
-           PlayerCostume.SetActive(false);
-       }
    }
 
     // Update is called once per frame
 
     void Update()
     {   
-        if (PV.IsMine)
+        
+        if (PV.IsMine){
         Movement();
+            count++;
+            if (count==0){
+                if (GameObject.Find("Player_FPV(Clone)")== null)
+                {
+                    MascotCostume.SetActive(true);
+                    PlayerCostume.SetActive(false);
+                }
+            }
+
+        }
         if(!PV.IsMine)
         {
             cam.enabled = false;
