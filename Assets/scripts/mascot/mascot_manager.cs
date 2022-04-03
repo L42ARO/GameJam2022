@@ -8,7 +8,7 @@ public class mascot_manager : MonoBehaviour
 
     void Awake(){
         System.Random rnd = new System.Random();
-        int Cosplay = rnd.Next(0,4);
+        int Cosplay = rnd.Next(0,5);
 
         if (Cosplay == 0){
             mascot_array[0].SetActive(true);
