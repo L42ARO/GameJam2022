@@ -14,6 +14,7 @@ public class GameSetupController : MonoBehaviour{
 	print("Creating Player");
   if(GameObject.Find("Mascot(Clone)") == null)
   {
+    Debug.Break();
     print("Mascot not found");
 	  PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Mascot"), new Vector3 (5,5,5), Quaternion.identity);
   }
