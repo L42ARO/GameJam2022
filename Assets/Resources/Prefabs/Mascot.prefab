@@ -295,6 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 7151818947559296761}
+  cam: {fileID: 7151818947392701647}
   speed: 12
   gravity: -9.81
   groundCheck: {fileID: 7151818946320582610}
@@ -736,7 +737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d35ce3c3f6e4831408e62ba59c5285a1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.53999996
+      value: 0.51
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d35ce3c3f6e4831408e62ba59c5285a1, type: 3}
       propertyPath: m_LocalPosition.z

@@ -6,7 +6,7 @@ using UnityEngine;
 public class playerMoverment_script : MonoBehaviour
 {   
     public CharacterController controller;
-    
+    [SerializeField] private Camera cam;
     public float speed = 12f;
     public float gravity = -9.81f;
     private PhotonView PV;
@@ -28,7 +28,10 @@ public class playerMoverment_script : MonoBehaviour
     {   
         if (PV.IsMine)
         Movement();
-    
+        if(!PV.IsMine)
+        {
+            cam.enabled = false;
+        }
 
     }
     void Movement()
