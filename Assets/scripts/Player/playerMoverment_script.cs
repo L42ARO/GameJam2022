@@ -38,5 +38,11 @@ public class playerMoverment_script : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
+
+        if (transform.position.y<-1){
+           //collisionInfo.gameObject.GetComponent<statsController>().game();
+           print("GAME OVER");
+       }
+
     }
 }
