@@ -26,10 +26,7 @@ public class playerMoverment_script : MonoBehaviour
 
     void Update()
     {   
-        
-    
-if (PV.IsMine)
-	Movement();
+        Movement();
     
 
     }
