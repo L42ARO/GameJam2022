@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(levelNames[gameState]);
         }else{
             instance.victory=true;
+            instance.win_loss_UI.victory();
         }
     }
     float damageTimer=0;

@@ -20,12 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: af978e57e6b5a6c4db8550f54587167b
+  - enabled: 0
+    path: Assets/Scenes/Level1_AI.unity
+    guid: 0f018ff6a6e3d4c419136d751cff5194
   - enabled: 1
     path: Assets/Scenes/Level2_AI.unity
     guid: bef9a6ea1e752f5409973c3aeb0e6120
-  - enabled: 1
-    path: Assets/Scenes/Level1_AI.unity
-    guid: 0f018ff6a6e3d4c419136d751cff5194
   - enabled: 1
     path: Assets/Scenes/Level3_AI.unity
     guid: 1338038e25cd4a247afd6536dc2fe93e
