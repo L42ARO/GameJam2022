@@ -6,7 +6,6 @@
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
-/[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 
@@ -72,4 +71,3 @@ crashlytics-build.properties
 
 #ignore local files for users
 LocalStuff/
-builds/
