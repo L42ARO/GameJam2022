@@ -10,3 +10,5 @@ Credits:
   <li>Multiplayer Developer: Joao Vito </li>
   <li>Player Controller Developer: Chirag Singh </li>
 </ul>
+<h2>Try It Out </h2>
+Download the files in the <a href="builds">builds</a> folder and run the .exe to test it out
